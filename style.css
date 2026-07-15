@@ -1,1 +1,252 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    background:
+    linear-gradient(#fff1d6,#f7d79b);
+
+    overflow:hidden;
+
+    font-family:"Arial", sans-serif;
+
+}
+
+
+/* 제목 */
+
+h1{
+
+    position:absolute;
+
+    top:40px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:70px;
+
+    color:#7b431c;
+
+    font-weight:bold;
+
+    text-shadow:
+    3px 3px 5px #fff;
+
+}
+
+
+/* 왼쪽 단원 */
+
+.menu{
+
+    position:absolute;
+
+    left:40px;
+
+    top:150px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+.menu div{
+
+    width:150px;
+
+    padding:15px;
+
+    background:#fff3d6;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    font-size:25px;
+
+    color:#6b3a16;
+
+    box-shadow:
+    0 5px 10px #c79b5c;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.menu div:hover{
+
+    transform:translateX(15px);
+
+    background:#ffd889;
+
+}
+
+
+
+/* 시작 버튼 */
+
+.start{
+
+    position:absolute;
+
+    left:50%;
+
+    top:55%;
+
+    transform:translate(-50%,-50%);
+
+
+    width:250px;
+
+    height:80px;
+
+
+    border:none;
+
+    border-radius:50px;
+
+
+    background:#d88932;
+
+    color:white;
+
+
+    font-size:35px;
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+    0 8px 15px #8b531f;
+
+
+    transition:.3s;
+
+}
+
+
+.start:hover{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.1);
+
+    background:#f0a94a;
+
+}
+
+
+
+/* 둥지 영역 */
+
+.dog-area{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+
+
+/* 둥지 */
+
+.nest{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+
+    width:500px;
+
+    height:120px;
+
+
+    background:
+    radial-gradient(
+    ellipse,
+    #d6a45b,
+    #b47732
+    );
+
+
+    border-radius:50%;
+
+
+    box-shadow:
+    inset 0 20px 30px #f3d18c;
+
+}
+
+
+
+/* 시바 */
+
+.shiba{
+
+    position:relative;
+
+    width:350px;
+
+    display:block;
+
+    margin:auto;
+
+    z-index:2;
+
+
+    animation:
+
+    float 3s infinite ease-in-out;
+
+}
+
+
+
+/* 둥둥 움직임 */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
