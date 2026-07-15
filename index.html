@@ -1,222 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>달걀 시바의 방</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:#9fd3ff;
-    font-family:sans-serif;
-}
-
-/* 방 */
-.room{
-    width:900px;
-    height:600px;
-    position:relative;
-    background:linear-gradient(#d9f0ff 65%, #d8b98b 65%);
-    border:8px solid #444;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-/* 창문 */
-.window{
-    position:absolute;
-    top:40px;
-    right:60px;
-    width:180px;
-    height:140px;
-    background:#87ceeb;
-    border:8px solid white;
-    border-radius:10px;
-}
-
-.window::before,
-.window::after{
-    content:"";
-    position:absolute;
-    background:white;
-}
-
-.window::before{
-    width:8px;
-    height:100%;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.window::after{
-    width:100%;
-    height:8px;
-    top:50%;
-    transform:translateY(-50%);
-}
-
-/* 침대 */
-.bed{
-    position:absolute;
-    left:40px;
-    bottom:70px;
-    width:260px;
-    height:110px;
-    background:#ffb6c1;
-    border-radius:20px;
-}
-
-.bed::before{
-    content:"";
-    position:absolute;
-    width:70px;
-    height:35px;
-    background:white;
-    border-radius:10px;
-    left:20px;
-    top:15px;
-}
-
-/* 달걀 시바 */
-.shiba{
-    position:absolute;
-    left:50%;
-    top:52%;
-    transform:translate(-50%,-50%);
-}
-
-.egg{
-    width:220px;
-    height:280px;
-    background:#fff8e8;
-    border-radius:50% 50% 45% 45%;
-    position:relative;
-    border:5px solid #444;
-}
-
-/* 귀 */
-.ear{
-    position:absolute;
-    width:55px;
-    height:70px;
-    background:#d88a43;
-    border:4px solid #444;
-    top:-15px;
-}
-
-.left-ear{
-    left:28px;
-    transform:rotate(-28deg);
-}
-
-.right-ear{
-    right:28px;
-    transform:rotate(28deg);
-}
-
-/* 얼굴 */
-.face{
-    position:absolute;
-    width:150px;
-    height:150px;
-    background:#d88a43;
-    border-radius:50%;
-    top:45px;
-    left:35px;
-}
-
-.white{
-    position:absolute;
-    width:100px;
-    height:90px;
-    background:white;
-    border-radius:50%;
-    left:25px;
-    bottom:18px;
-}
-
-.eye{
-    position:absolute;
-    width:10px;
-    height:14px;
-    background:#222;
-    border-radius:50%;
-    top:45px;
-}
-
-.eye.left{
-    left:38px;
-}
-
-.eye.right{
-    right:38px;
-}
-
-.nose{
-    position:absolute;
-    width:16px;
-    height:12px;
-    background:#222;
-    border-radius:50%;
-    left:50%;
-    transform:translateX(-50%);
-    top:72px;
-}
-
-.mouth{
-    position:absolute;
-    width:30px;
-    height:16px;
-    border-bottom:3px solid #222;
-    left:50%;
-    transform:translateX(-50%);
-    top:85px;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>달걀 시바의 방</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="room">
+    <!-- 제목 -->
+    <h1>달걀시바에 방입니다</h1>
 
-    <div class="window"></div>
 
-    <div class="bed"></div>
+    <!-- 왼쪽 메뉴 -->
+    <div class="menu">
+        <div>1단원</div>
+        <div>2단원</div>
+        <div>3단원</div>
+        <div>4단원</div>
+        <div>5단원</div>
+        <div>6단원</div>
+        <div>7단원</div>
+        <div>8단원</div>
+    </div>
 
-    <div class="shiba">
 
-        <div class="egg">
+    <!-- 중앙 시작 버튼 -->
+    <button class="start">
+        시작하기
+    </button>
 
-            <div class="ear left-ear"></div>
-            <div class="ear right-ear"></div>
 
-            <div class="face">
+    <!-- 달걀 시바 -->
+    <div class="dog-area">
 
-                <div class="eye left"></div>
-                <div class="eye right"></div>
+        <div class="nest"></div>
 
-                <div class="white">
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                </div>
-
-            </div>
-
-        </div>
+        <img src="image.png" class="shiba">
 
     </div>
 
-</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
