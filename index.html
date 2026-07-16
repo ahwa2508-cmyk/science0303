@@ -2,268 +2,131 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>달걀시바의 방</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>달걀 시바의 방</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Arial", sans-serif;
+    font-family:'맑은 고딕',sans-serif;
 }
 
 body{
-    width:100vw;
-    height:100vh;
+    background:linear-gradient(#dff7ff,#fff7db);
     overflow:hidden;
-    background:linear-gradient(#b9e8ff,#fff2c7);
 }
-
 
 /* 제목 */
-.title{
-    position:absolute;
-    top:40px;
-    width:100%;
+h1{
     text-align:center;
-    font-size:55px;
-    font-weight:bold;
-    color:#7b4b20;
+    font-size:60px;
+    margin-top:25px;
+    color:#7a4d00;
+    text-shadow:3px 3px 8px rgba(0,0,0,.25);
 }
 
-
-/* 왼쪽 단원 메뉴 */
-.menu{
-    position:absolute;
-    left:40px;
-    top:150px;
+/* 왼쪽 메뉴 */
+.sidebar{
+    position:fixed;
+    top:120px;
+    left:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }
 
-.menu div{
-    width:150px;
-    padding:15px;
-    margin-bottom:15px;
-    background:white;
-    border-radius:20px;
+.sidebar a{
+    width:130px;
+    text-decoration:none;
+    color:white;
+    background:#ffb347;
+    padding:13px;
+    border-radius:15px;
     text-align:center;
     font-size:22px;
     font-weight:bold;
-    box-shadow:0 5px 10px #aaa;
-    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
 }
 
-.menu div:hover{
-    background:#ffe59a;
+.sidebar a:hover{
+    background:#ff8c42;
+    transform:translateX(10px);
 }
 
-
-/* 캐릭터 위치 */
-.character-area{
-    position:absolute;
-    bottom:170px;
-    left:50%;
-    transform:translateX(-50%);
+/* 가운데 */
+.main{
+    height:calc(100vh - 100px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-
-
-/* 달걀 몸 */
-.egg{
-    width:260px;
-    height:330px;
-    background:#fff7d6;
-    border-radius:50% 50% 45% 45%;
-    position:relative;
-    border:5px solid #e4c88c;
-    box-shadow:0 10px 20px #999;
-}
-
-
-/* 시바 얼굴 */
-.face{
-    position:absolute;
-    top:55px;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-
-/* 귀 */
-.ear{
-    position:absolute;
-    width:70px;
-    height:80px;
-    background:#b9783c;
-    top:-35px;
-    border-radius:80% 20% 20% 20%;
-}
-
-.left{
-    left:-80px;
-    transform:rotate(-25deg);
-}
-
-.right{
-    right:-80px;
-    transform:rotate(25deg) scaleX(-1);
-}
-
-
-/* 얼굴 */
-.head{
-    width:150px;
-    height:120px;
-    background:#c88745;
-    border-radius:50%;
-    position:relative;
-}
-
-
-/* 눈 */
-.eye{
-    width:18px;
-    height:18px;
-    background:black;
-    border-radius:50%;
-    position:absolute;
-    top:45px;
-}
-
-.eye1{
-    left:35px;
-}
-
-.eye2{
-    right:35px;
-}
-
-
-/* 코 */
-.nose{
-    position:absolute;
-    width:30px;
-    height:25px;
-    background:black;
-    border-radius:50%;
-    left:60px;
-    top:70px;
-}
-
-
-/* 입 */
-.mouth{
-    position:absolute;
-    width:45px;
-    height:20px;
-    border-bottom:5px solid black;
-    border-radius:50%;
-    left:52px;
-    top:90px;
-}
-
 
 /* 둥지 */
 .nest{
+    position:relative;
+    width:650px;
+    height:350px;
+}
+
+/* 둥지 */
+.nest::before{
+    content:"";
     position:absolute;
-    width:350px;
-    height:80px;
-    background:#b87838;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:520px;
+    height:150px;
     border-radius:50%;
-    bottom:-40px;
-    left:50%;
-    transform:translateX(-50%);
-    box-shadow:inset 0 15px 20px #75400e;
+    background:
+    repeating-radial-gradient(circle at center,
+    #8b5a2b 0px,
+    #8b5a2b 8px,
+    #9c6a3c 8px,
+    #9c6a3c 16px);
+    box-shadow:0 20px 35px rgba(0,0,0,.25);
 }
 
-
-/* 시작 버튼 */
-.start{
+/* 시바 */
+.shiba{
     position:absolute;
     left:50%;
-    bottom:70px;
+    bottom:80px;
     transform:translateX(-50%);
+    width:300px;
+    z-index:2;
+    transition:.3s;
 }
 
-button{
-    width:230px;
-    height:70px;
-    border:none;
-    border-radius:40px;
-    background:#ffb347;
-    font-size:30px;
-    font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 8px 15px #999;
+.shiba:hover{
+    transform:translateX(-50%) scale(1.08);
 }
-
-button:hover{
-    background:#ff8c42;
-    transform:scale(1.1);
-}
-
-
 </style>
-
 </head>
-
 
 <body>
 
+<h1>🥚 달걀 시바의 방입니다 🐕</h1>
 
-<div class="title">
-달걀시바의 방입니다
+<div class="sidebar">
+<a href="#">1단원</a>
+<a href="#">2단원</a>
+<a href="#">3단원</a>
+<a href="#">4단원</a>
+<a href="#">5단원</a>
+<a href="#">6단원</a>
+<a href="#">7단원</a>
+<a href="#">8단원</a>
 </div>
 
-
-<div class="menu">
-    <div>1단원</div>
-    <div>2단원</div>
-    <div>3단원</div>
-    <div>4단원</div>
-    <div>5단원</div>
-    <div>6단원</div>
-    <div>7단원</div>
-    <div>8단원</div>
-</div>
-
-
-
-<div class="character-area">
-
-    <div class="egg">
-
-        <div class="face">
-
-            <div class="ear left"></div>
-            <div class="ear right"></div>
-
-            <div class="head">
-
-                <div class="eye eye1"></div>
-                <div class="eye eye2"></div>
-
-                <div class="nose"></div>
-                <div class="mouth"></div>
-
-            </div>
-
-        </div>
-
+<div class="main">
+    <div class="nest">
+        <img src="shiba.png" class="shiba">
     </div>
-
-
-    <div class="nest"></div>
-
 </div>
-
-
-
-<div class="start">
-<button>
-시작하기
-</button>
-</div>
-
 
 </body>
 </html>
