@@ -6,58 +6,63 @@
 <title>달걀 시바의 방</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'맑은 고딕',sans-serif;
+    font-family:"맑은 고딕",sans-serif;
 }
 
 body{
-    background:linear-gradient(#dff7ff,#fff7db);
+    background:linear-gradient(to bottom,#dff7ff,#fff7da);
     overflow:hidden;
 }
 
 /* 제목 */
+
 h1{
     text-align:center;
-    font-size:60px;
     margin-top:25px;
-    color:#7a4d00;
-    text-shadow:3px 3px 8px rgba(0,0,0,.25);
+    font-size:58px;
+    color:#7b4b00;
+    text-shadow:4px 4px 10px rgba(0,0,0,.2);
 }
 
-/* 왼쪽 메뉴 */
+/* 메뉴 */
+
 .sidebar{
     position:fixed;
     top:120px;
     left:20px;
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:18px;
 }
 
 .sidebar a{
-    width:130px;
+    width:135px;
     text-decoration:none;
-    color:white;
-    background:#ffb347;
-    padding:13px;
-    border-radius:15px;
     text-align:center;
+    padding:15px;
+    border-radius:18px;
+    background:#ffb347;
+    color:white;
     font-size:22px;
     font-weight:bold;
+    box-shadow:0 8px 18px rgba(0,0,0,.2);
     transition:.3s;
-    box-shadow:0 5px 10px rgba(0,0,0,.2);
 }
 
 .sidebar a:hover{
-    background:#ff8c42;
-    transform:translateX(10px);
+    transform:translateX(12px) scale(1.05);
+    background:#ff8f2d;
 }
 
 /* 가운데 */
+
 .main{
+    width:100%;
     height:calc(100vh - 100px);
     display:flex;
     justify-content:center;
@@ -65,53 +70,118 @@ h1{
 }
 
 /* 둥지 */
-.nest{
-    position:relative;
-    width:650px;
-    height:350px;
-}
 
-/* 둥지 */
-.nest::before{
-    content:"";
-    position:absolute;
-    bottom:0;
-    left:50%;
-    transform:translateX(-50%);
+.nest{
+
+    position:relative;
     width:520px;
-    height:150px;
+    height:170px;
     border-radius:50%;
     background:
     repeating-radial-gradient(circle at center,
     #8b5a2b 0px,
     #8b5a2b 8px,
-    #9c6a3c 8px,
-    #9c6a3c 16px);
-    box-shadow:0 20px 35px rgba(0,0,0,.25);
+    #9e6938 8px,
+    #9e6938 16px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
 }
 
 /* 시바 */
+
 .shiba{
+
     position:absolute;
+    width:270px;
+
     left:50%;
-    bottom:80px;
+    bottom:75px;
+
     transform:translateX(-50%);
-    width:300px;
-    z-index:2;
-    transition:.3s;
+
+    animation:float 2s ease-in-out infinite;
+
+    z-index:5;
+
 }
 
-.shiba:hover{
-    transform:translateX(-50%) scale(1.08);
+@keyframes float{
+
+0%{
+transform:translateX(-50%) translateY(0px);
 }
+
+50%{
+transform:translateX(-50%) translateY(-12px);
+}
+
+100%{
+transform:translateX(-50%) translateY(0px);
+}
+
+}
+
+/* 구름 */
+
+.cloud{
+
+position:absolute;
+background:white;
+opacity:.7;
+border-radius:100px;
+
+}
+
+.c1{
+
+width:180px;
+height:60px;
+
+top:80px;
+left:-250px;
+
+animation:moveCloud 35s linear infinite;
+
+}
+
+.c2{
+
+width:250px;
+height:70px;
+
+top:210px;
+left:-400px;
+
+animation:moveCloud 48s linear infinite;
+
+}
+
+@keyframes moveCloud{
+
+from{
+left:-400px;
+}
+
+to{
+left:120%;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+
 <h1>🥚 달걀 시바의 방입니다 🐕</h1>
 
 <div class="sidebar">
+
 <a href="#">1단원</a>
 <a href="#">2단원</a>
 <a href="#">3단원</a>
@@ -120,12 +190,17 @@ h1{
 <a href="#">6단원</a>
 <a href="#">7단원</a>
 <a href="#">8단원</a>
+
 </div>
 
 <div class="main">
-    <div class="nest">
-        <img src="shiba.png" class="shiba">
-    </div>
+
+<div class="nest">
+
+<img src="shiba.png" class="shiba">
+
+</div>
+
 </div>
 
 </body>
